@@ -107,8 +107,10 @@ public:
 		}
 		file.close();
 		ofstream outFile(file_path);
-		for (size_t i = lines.size(); 0 < i; --i)
+		for (int i = lines.size()-1; 0 <= i; --i)
 		{
+			//20 19
+			cout << lines[i] << endl;
 			outFile << lines[i] << endl;
 		}
 		outFile.close();
@@ -142,11 +144,13 @@ void printMenu() {
 string cinString() {
 	string str;
 	getline(cin,str);
+	return str;
 }
 string cinString(const string& text) {
 	string str;
 	cout << text << endl;
 	getline(cin, str);
+	return str;
 }
 int main() {
 	//File testFile("testFile.txt");
@@ -156,7 +160,7 @@ int main() {
 	//testFile.print();
 	int answer;
 	File file;
-	file.setPath(cinString());
+	file.setPath(cinString("Eneter File path"));
 	while (true)
 	{
 		printMenu();
@@ -171,7 +175,8 @@ int main() {
 			break;
 
 		case 3:
-
+			file.reverseFile();
+			break;
 		case 4:
 			file.replaceString(cinString("Enter which string you need to replace..."), cinString("Enter string to replace..."));
 			break;

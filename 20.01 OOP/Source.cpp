@@ -46,6 +46,7 @@ public:
 		}
 		string line;
 		string buffer;
+		int distance=0;
 		int t_it;
 		vector<string>str_list;
 		while (getline(file, line))
@@ -68,15 +69,17 @@ public:
 						{
 							t_it = 0;
 							getline(file, line);
+							distance = 0;
 						}
 						if (line[t_it]=='*'&& line[t_it+1]=='/')
 						{
-							
+							i = t_it+1 ;
 							break;
 						}
 						++t_it;
+						
 					}
-					i += 2;
+					
 				}
 				else {
 					buffer += line[i];
@@ -96,7 +99,7 @@ public:
 		{
 			cout << i << endl;
 		}
-			file.close();
+		file.close();
 	}
 };
 int main() {

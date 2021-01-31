@@ -14,4 +14,9 @@ dwdwqdwqdwq
 will deleted
  */
 abcd /* NEW */ abcd
+i=5;
+if(fkd=2322){
+	++i;
+	d\test /* WILL DELETED */ d/test
+}
 dsdefdfe
